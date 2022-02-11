@@ -1,0 +1,21 @@
+{
+  "name": "module-federation",
+  "version": "1.0.0",
+  "description": "experiments with module federation in React with Webpack5",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "host",
+      "app_16",
+      "app_17"
+    ]
+  },
+  "scripts": {
+    "start": "concurrently \"cd app_16; yarn start\" \"cd app_17; yarn start\" \"cd host; yarn start\""
+  },
+  "devDependencies": {
+    "concurrently": "7.0.0"
+  }
+}
