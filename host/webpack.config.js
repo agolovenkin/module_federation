@@ -38,6 +38,12 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: 'host',
+      shared: {
+        react: {
+          requiredVersion: deps.react,
+          import: 'react'
+        },
+      },
       remotes: {
         app_16: 'app_16@[app_16_url]/remoteEntry.js',
         app_17: 'app_17@[app_17_url]/remoteEntry.js'
